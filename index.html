@@ -1,36 +1,43 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Mundo Droid Poster - Conectando</title>
-<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:60px auto;padding:0 16px;line-height:1.6;color:#222;background:#fff}code{word-break:break-all;background:#f3f3f3;padding:2px 4px;border-radius:4px}button{padding:8px 14px;cursor:pointer}</style>
+<title>Mundo Droid Poster</title>
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:60px auto;padding:0 16px;line-height:1.6;color:#222;background:#fff}code{word-break:break-all;background:#f3f3f3;padding:2px 4px;border-radius:4px}button{padding:8px 14px;cursor:pointer}</style>
 </head>
 <body>
-<h1>Conectando ao AutoPost...</h1>
-<p id="msg">Voltando para o app no seu computador.</p>
-<div id="manual" hidden>
+<div id="home">
+  <h1>Mundo Droid Poster</h1>
+  <p>A Windows desktop app for creators to schedule and publish their own short videos to their own TikTok, Instagram and YouTube accounts, using only the official APIs of each platform.</p>
+  <ul>
+    <li>Choose videos from your computer, review titles and hashtags, and pick the date and time.</li>
+    <li>Connect accounts with the official login of each platform. Passwords are never requested or stored.</li>
+    <li>All data stays on your computer. Access tokens are encrypted locally.</li>
+  </ul>
+  <p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · Contact: <a href="mailto:contatomundodroid4@gmail.com">contatomundodroid4@gmail.com</a></p>
+</div>
+<div id="bridge" hidden>
+  <h1>Conectando ao AutoPost...</h1>
+  <p>Voltando para o app no seu computador.</p>
   <p>Se o AutoPost não abriu a confirmação, copie o endereço abaixo e cole no app em <b>Contas › Colar URL de retorno</b>:</p>
   <p><code id="url"></code></p>
   <button id="copy">Copiar endereço</button>
 </div>
 <script>
-// Página-ponte do login do Instagram (Meta exige HTTPS público).
-// Repassa code e state para o AutoPost, que roda só neste computador.
+// Também é a página-ponte do login do Instagram (a Meta exige HTTPS público):
+// repassa code e state para o AutoPost, que roda só no computador do usuário.
 (function () {
   var PORT = 47615;
   var q = window.location.search;
+  if (!/[?&](code|error)=/.test(q)) return;
   var full = window.location.href.split("#")[0];
+  document.getElementById("home").hidden = true;
+  document.getElementById("bridge").hidden = false;
   document.getElementById("url").textContent = full;
   document.getElementById("copy").onclick = function () {
     navigator.clipboard.writeText(full).then(function () { document.getElementById("copy").textContent = "Copiado!"; });
   };
-  if (!/[?&](code|error)=/.test(q)) {
-    document.getElementById("msg").textContent = "Esta página só é usada durante a conexão do Instagram no AutoPost.";
-    return;
-  }
-  document.getElementById("manual").hidden = false;
   window.location.replace("http://localhost:" + PORT + "/oauth/callback/instagram/" + q);
 })();
 </script>
