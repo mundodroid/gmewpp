@@ -3,27 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mundo Droid Poster</title>
-<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:60px auto;padding:0 16px;line-height:1.6;color:#222;background:#fff}code{word-break:break-all;background:#f3f3f3;padding:2px 4px;border-radius:4px}button{padding:8px 14px;cursor:pointer}</style>
+<title>Mundo Droid Poster - Schedule your videos to TikTok, Instagram and YouTube</title>
+<meta name="description" content="Mundo Droid Poster is a Windows desktop app for creators to schedule and publish their own short videos to TikTok, Instagram and YouTube using the official APIs.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div id="home">
-  <h1>Mundo Droid Poster</h1>
-  <p>A Windows desktop app for creators to schedule and publish their own short videos to their own TikTok, Instagram and YouTube accounts, using only the official APIs of each platform.</p>
-  <ul>
-    <li>Choose videos from your computer, review titles and hashtags, and pick the date and time.</li>
-    <li>Connect accounts with the official login of each platform. Passwords are never requested or stored.</li>
-    <li>All data stays on your computer. Access tokens are encrypted locally.</li>
-  </ul>
-  <p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · Contact: <a href="mailto:contatomundodroid4@gmail.com">contatomundodroid4@gmail.com</a></p>
-</div>
-<div id="bridge" hidden>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="icon-192.png" alt="Mundo Droid Poster icon">Mundo Droid Poster</a>
+  <nav><a href="#features">Features</a><a href="#how">How it works</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav>
+</div></header>
+
+<main id="home">
+<div class="hero"><div class="wrap">
+  <img src="icon-512.png" alt="Mundo Droid Poster icon">
+  <h1>Post your short videos everywhere, on schedule</h1>
+  <p>Mundo Droid Poster is a free Windows desktop app that helps creators plan, schedule and publish their own short videos to TikTok, Instagram Reels and YouTube Shorts, using only the official APIs of each platform.</p>
+  <a class="btn" href="#download">Download for Windows</a>
+  <a class="btn ghost" href="#how">See how it works</a>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <h2>Features</h2>
+  <div class="grid">
+    <div class="card"><h3>Schedule in bulk</h3><p>Pick many videos from your computer at once and spread them across the days and times you choose.</p></div>
+    <div class="card"><h3>TikTok, Instagram and YouTube</h3><p>Publish the same video to TikTok, Instagram Reels and YouTube Shorts, with captions and settings for each platform.</p></div>
+    <div class="card"><h3>Full control before posting</h3><p>For TikTok you choose the privacy level, comments, Duet and Stitch, commercial content disclosure and confirm the Music Usage Confirmation on every post.</p></div>
+    <div class="card"><h3>Caption suggestions</h3><p>Optional AI suggestions for titles and hashtags that you always review and edit before scheduling.</p></div>
+    <div class="card"><h3>Real publishing status</h3><p>See whether each post is scheduled, processing, published or failed, exactly as reported by each platform.</p></div>
+    <div class="card"><h3>Private by design</h3><p>Everything runs on your computer. Accounts connect with the official login of each platform; passwords are never requested or stored.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>Install</b> the app on your Windows computer.</li>
+    <li><b>Connect your accounts</b> in the <i>Accounts</i> screen using the official TikTok, Instagram or Google login. You can disconnect at any time.</li>
+    <li><b>Choose your videos</b>, review the caption and hashtags, and select which accounts will receive each video.</li>
+    <li><b>Review the platform settings</b>. For TikTok the app shows your nickname and the privacy options allowed for your account; you pick them manually before posting.</li>
+    <li><b>Pick the date and time.</b> At the scheduled time the app uploads the video through the official API and shows the result in the <i>Posts</i> screen.</li>
+  </ol>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <h2>Download</h2>
+  <p>Mundo Droid Poster is free and available for Windows 10 and 11 (64-bit).</p>
+  <p><a class="btn" href="https://github.com/mundodroid/gmewpp/releases/latest">Download the latest version</a></p>
+  <p style="color:var(--muted)">Requires an internet connection and your own TikTok, Instagram professional or YouTube account.</p>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+  <h2>Frequently asked questions</h2>
+  <details><summary>Is it free?</summary><p>Yes. The app is free to download and use.</p></details>
+  <details><summary>Do you store my videos or passwords?</summary><p>No. Your videos stay on your computer and are sent directly to the platforms you choose. Passwords are never requested; access tokens are encrypted on your computer. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+  <details><summary>Can I post content I don't own?</summary><p>No. You may only publish content you own or have the rights to publish, as described in the <a href="terms.html">Terms of Service</a>.</p></details>
+  <details><summary>How do I disconnect an account?</summary><p>Inside the app, open <i>Accounts</i> and remove the account. You can also revoke access in the settings of TikTok, Instagram or Google.</p></details>
+  <details><summary>Is this an official TikTok, Instagram or YouTube app?</summary><p>No. Mundo Droid Poster is an independent app that uses the official public APIs of these platforms. It is not affiliated with or endorsed by TikTok, Meta or Google.</p></details>
+</div></section>
+</main>
+
+<div id="bridge" class="doc" hidden>
   <h1>Conectando ao AutoPost...</h1>
   <p>Voltando para o app no seu computador.</p>
   <p>Se o AutoPost não abriu a confirmação, copie o endereço abaixo e cole no app em <b>Contas › Colar URL de retorno</b>:</p>
   <p><code id="url"></code></p>
   <button id="copy">Copiar endereço</button>
 </div>
+
+<footer><div class="wrap">
+  <img src="favicon-32.png" alt=""> <span>© 2026 Mundo Droid Poster</span>
+  <a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a>
+  <a href="mailto:contatomundodroid4@gmail.com">contatomundodroid4@gmail.com</a>
+</div></footer>
+
 <script>
 // Também é a página-ponte do login do Instagram (a Meta exige HTTPS público):
 // repassa code e state para o AutoPost, que roda só no computador do usuário.

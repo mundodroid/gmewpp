@@ -4,11 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mundo Droid Poster - Privacy Policy</title>
-<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222;background:#fff}h1{font-size:1.8em}h2{font-size:1.2em;margin-top:1.6em}</style>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<h1>Privacy Policy - Mundo Droid Poster</h1>
-<p>Last updated: November 11, 2026</p>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="icon-192.png" alt="Mundo Droid Poster icon">Mundo Droid Poster</a>
+  <nav><a href="./">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav>
+</div></header>
+
+<main class="doc">
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: November 23, 2026</p>
 
 <p>Mundo Droid Poster ("the app", also shown as "AutoPost AI Pro") is a Windows desktop application that lets a creator schedule and publish their own short videos to their own TikTok, Instagram and YouTube accounts using only the official APIs of each platform.</p>
 
@@ -16,6 +25,7 @@
 <ul>
 <li><b>TikTok:</b> basic profile (open ID, display name, avatar) via <code>user.info.basic</code>, used only to show which account is connected; creator posting information (allowed privacy levels, maximum video duration, interaction settings) via the Content Posting API, used only to validate a post before it is sent.</li>
 <li><b>Instagram (Meta):</b> the professional account ID, username, name and profile picture, used only to show which account is connected; publishing limits and the status of media containers, used only to publish and confirm the user's Reels.</li>
+<li><b>Instagram automations (optional):</b> if the account owner turns on an automation (for example "reply with a link by Direct message to people who comment a keyword"), the app reads the comments on the owner's own posts (comment text, commenter's Instagram-scoped ID and username), sends the Direct message the owner configured, optionally replies to the comment, and checks whether that person follows the owner's account before sending the link, only when the owner enabled "follow to unlock".</li>
 <li><b>YouTube (Google):</b> via the <code>youtube.upload</code> and <code>youtube.readonly</code> scopes, the channel ID, title and thumbnail (to show which channel is connected), the upload and processing status of videos sent by the app, and view counts of those videos (to suggest posting times to the user).</li>
 <li><b>Videos and captions</b> selected by the user on their own computer, which are uploaded to the platforms only when the user schedules or publishes them.</li>
 </ul>
@@ -23,6 +33,7 @@
 <h2>2. Where data is stored</h2>
 <p>All data stays on the user's own computer. Access tokens are encrypted (AES/Fernet) and the encryption key is kept in the Windows Credential Manager. The app does not operate a server that collects user data, and it never asks for or stores passwords of TikTok, Instagram, Facebook or Google accounts.</p>
 <p>For Instagram only, the platform requires the video to be available at a public link: the app uploads the video to the user's own storage bucket (configured by the user, for example Cloudflare R2), creates a temporary signed link and deletes the file after the post is published.</p>
+<p>Instagram automations run in a small cloud service (Cloudflare Workers and D1) created in the account owner's own Cloudflare account, so that replies also work while the computer is off. It stores only what is needed to avoid sending the same message twice: the comment ID, the commenter's Instagram-scoped ID and username, the rule that was triggered and the time. Message contents are not stored. These records are automatically deleted after 30 days.</p>
 
 <h2>3. How data is used</h2>
 <p>Data is used exclusively to publish the videos the user chooses, at the time the user chooses, and to show the publishing status and simple statistics to the user. Data is not sold, shared with third parties, or used for advertising.</p>
@@ -34,7 +45,7 @@
 <p>Videos are sent directly from the user's computer to the platforms. If the user enables AI-generated captions, frames of the video and its audio transcription may be sent to the AI providers configured by the user (Anthropic and, for audio transcription, an OpenAI-compatible service) to generate a title and hashtags. No data obtained from TikTok, Instagram or YouTube APIs is sent to these AI providers.</p>
 
 <h2>6. Retention and deletion</h2>
-<p>The user can disconnect any account at any time inside the app, which deletes the stored tokens and revokes the access where the platform allows it. Uninstalling the app and deleting its data folder removes all local data. Access can also be revoked directly on each platform:</p>
+<p>The user can disconnect any account at any time inside the app, which deletes the stored tokens and revokes the access where the platform allows it. Uninstalling the app and deleting its data folder removes all local data. Instagram automations can be turned off at any time inside the app, and their records are deleted automatically after 30 days; anyone who interacted with an automation can ask for their records to be deleted earlier by writing to the contact address below. Access can also be revoked directly on each platform:</p>
 <ul>
 <li>TikTok: Settings &gt; Security &gt; Manage app permissions.</li>
 <li>Instagram / Meta: Settings &gt; Apps and websites, or Business settings &gt; Apps.</li>
@@ -43,5 +54,11 @@
 
 <h2>7. Contact</h2>
 <p>Questions about this policy: <a href="mailto:contatomundodroid4@gmail.com">contatomundodroid4@gmail.com</a></p>
+</main>
+
+<footer><div class="wrap">
+  <img src="favicon-32.png" alt=""> <span>© 2026 Mundo Droid Poster</span>
+  <a href="./">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a>
+</div></footer>
 </body>
 </html>
